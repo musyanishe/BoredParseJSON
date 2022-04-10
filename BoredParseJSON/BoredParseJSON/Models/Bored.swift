@@ -10,6 +10,7 @@ import Foundation
 struct Bored: Decodable {
     let activity: String?
     let type: String?
+    let participants: Int?
     let price: Double?
     let accessibility: Double?
 }
