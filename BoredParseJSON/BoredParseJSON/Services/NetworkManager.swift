@@ -20,12 +20,16 @@ class NetworkManager{
         guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
-                completion(.fail(error!))
+                if let error = error {
+                    completion(.fail(error))
+                }
                 return
             }
             do {
                 guard let bored = try? JSONDecoder().decode(Bored.self, from: data) else {
-                    completion(.fail(error!))
+                    if let error = error {
+                        completion(.fail(error))
+                    }
                     return
                 }
                 completion(.success(bored))

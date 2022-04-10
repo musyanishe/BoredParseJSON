@@ -53,21 +53,50 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="uuj-RB-rGG">
                                 <rect key="frame" x="169" y="315" width="37" height="37"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gpE-zv-tt2">
+                                <rect key="frame" x="100" y="569" width="175" height="38"/>
+                                <color key="backgroundColor" red="0.61475365069999999" green="1" blue="0.97826446219999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Next Activity">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="activityButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F7R-3d-rAi"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="4MW-E0-aJb" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="2ZD-6r-hlz"/>
+                            <constraint firstItem="gpE-zv-tt2" firstAttribute="leading" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="Lxw-rB-qHo"/>
                             <constraint firstItem="uuj-RB-rGG" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SO1-lo-D64"/>
+                            <constraint firstItem="gpE-zv-tt2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TcO-PU-cbj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gpE-zv-tt2" secondAttribute="bottom" constant="60" id="YGb-um-zkt"/>
                             <constraint firstItem="4MW-E0-aJb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aUa-9c-mIH"/>
                             <constraint firstItem="uuj-RB-rGG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cbg-Gr-k97"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="gpE-zv-tt2" secondAttribute="trailing" constant="100" id="hKw-gQ-ArY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4MW-E0-aJb" secondAttribute="trailing" constant="16" id="jQW-qw-Nd3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="accessibilitiesLabel" destination="kVr-fn-Oru" id="QQo-Lu-Vww"/>
+                        <outlet property="activityIndicator" destination="uuj-RB-rGG" id="We0-7z-EqO"/>
+                        <outlet property="activityLabel" destination="9KS-6E-u83" id="lHY-Fw-BeT"/>
+                        <outlet property="participantsLabel" destination="sFh-28-Qxg" id="m5G-jI-bgp"/>
+                        <outlet property="priceLabel" destination="zPR-56-egB" id="jPW-dy-Ezj"/>
+                        <outlet property="typeLabel" destination="cHH-qc-F7E" id="9fF-Lw-ffh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="35" y="98"/>
+            <point key="canvasLocation" x="34.399999999999999" y="97.601199400299862"/>
         </scene>
     </scenes>
 </document>

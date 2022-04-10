@@ -8,12 +8,44 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet var activityLabel: UILabel!
+    @IBOutlet var typeLabel: UILabel!
+    @IBOutlet var participantsLabel: UILabel!
+    @IBOutlet var priceLabel: UILabel!
+    @IBOutlet var accessibilitiesLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
+        fetchActivityForButton()
     }
-
-
+    
+    
+    @IBAction func activityButtonPressed(_ sender: UIButton) {
+        fetchActivityForButton()
+    }
+    
+    private func fetchActivityForButton() {
+        NetworkManager.shared.fetchActivity(from: NetworkManager.shared.url) {
+            result in
+            switch result {
+            case .success(let bored):
+                DispatchQueue.main.async {
+                    self.activityLabel.text = "Activity: \(bored.activity ?? "")"
+                    self.typeLabel.text = "Type: \(bored.type ?? "")"
+                    self.participantsLabel.text = "Participants: \(bored.participants ?? 0)"
+                    self.priceLabel.text = "Price: \(bored.price ?? 0)"
+                    self.accessibilitiesLabel.text = "Accessibility: \(bored.accessibility ?? 0)"
+                    self.activityIndicator.stopAnimating()
+                }
+            case .fail(let error):
+                print(error)
+            }
+        }
+    }
 }
 
