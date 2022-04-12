@@ -18,11 +18,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityLabel.isHidden = true
+        typeLabel.isHidden = true
+        participantsLabel.isHidden = true
+        priceLabel.isHidden = true
+        accessibilitiesLabel.isHidden = true
         
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
         fetchActivityForButton()
+        
     }
     
     
@@ -42,6 +48,11 @@ class ViewController: UIViewController {
                     self.priceLabel.text = "Price: \(bored.price ?? 0)"
                     self.accessibilitiesLabel.text = "Accessibility: \(bored.accessibility ?? 0)"
                     self.activityIndicator.stopAnimating()
+                    self.activityLabel.isHidden = false
+                    self.typeLabel.isHidden = false
+                    self.participantsLabel.isHidden = false
+                    self.priceLabel.isHidden = false
+                    self.accessibilitiesLabel.isHidden = false
                 }
             case .failure(let error):
                 print(error.localizedDescription)
