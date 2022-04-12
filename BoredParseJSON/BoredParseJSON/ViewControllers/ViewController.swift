@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
     }
     
     private func fetchActivityForButton() {
-        NetworkManager.shared.fetchActivity(from: NetworkManager.shared.url) {
+        NetworkManager.shared.fetchActivity(from: "https://www.boredapi.com/api/activity") {
             result in
             switch result {
             case .success(let bored):
@@ -42,8 +43,8 @@ class ViewController: UIViewController {
                     self.accessibilitiesLabel.text = "Accessibility: \(bored.accessibility ?? 0)"
                     self.activityIndicator.stopAnimating()
                 }
-            case .fail(let error):
-                print(error)
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }

@@ -6,30 +6,34 @@
 //
 
 import Foundation
+import Alamofire
+
+enum NetworkError: Error {
+    case invalidURL
+    case noData
+    case decodingError
+}
 
 class NetworkManager{
     
-    enum Result<Success, Error: Swift.Error>{
-        case success(Success)
-        case fail(Error)
-    }
-    
     static let shared = NetworkManager()
-    let url = "https://www.boredapi.com/api/activity"
-    func fetchActivity(from url: String, completion: @escaping (Result<Bored, Error>) -> ()) {
-        guard let url = URL(string: url) else { return }
+    
+    private init() {}
+    
+    func fetchActivity(from url: String?, completion: @escaping (Result<Bored, NetworkError>) ->Void) {
+        guard let url = URL(string: url ?? "") else {
+            completion(.failure(.invalidURL))
+            return
+        }
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
-                if let error = error {
-                    completion(.fail(error))
-                }
+                completion(.failure(.noData))
+                print(error?.localizedDescription ?? "No error description")
                 return
             }
             do {
                 guard let bored = try? JSONDecoder().decode(Bored.self, from: data) else {
-                    if let error = error {
-                        completion(.fail(error))
-                    }
+                    completion(.failure(.decodingError))
                     return
                 }
                 completion(.success(bored))
@@ -37,6 +41,5 @@ class NetworkManager{
         }.resume()
     }
     
-    init() {}
 }
 
