@@ -12,6 +12,7 @@ enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingError
+    case invalidStatusCode
 }
 
 class NetworkManager{
@@ -25,10 +26,15 @@ class NetworkManager{
             completion(.failure(.invalidURL))
             return
         }
-        URLSession.shared.dataTask(with: url) { data, _, error in
+        URLSession.shared.dataTask(with: url) { data, response, error in
             guard let data = data else {
                 completion(.failure(.noData))
                 print(error?.localizedDescription ?? "No error description")
+                return
+            }
+            guard let httpResponse = response as? HTTPURLResponse,
+            (200..<300).contains(httpResponse.statusCode) else {
+                completion(.failure(.invalidStatusCode))
                 return
             }
             do {

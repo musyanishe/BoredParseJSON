@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UrlSessionViewController: UIViewController {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var activityLabel: UILabel!
@@ -23,9 +23,6 @@ class ViewController: UIViewController {
         participantsLabel.isHidden = true
         priceLabel.isHidden = true
         accessibilitiesLabel.isHidden = true
-        
-        activityIndicator.startAnimating()
-        activityIndicator.hidesWhenStopped = true
         
         fetchActivityForButton()
         
