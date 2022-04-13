@@ -47,5 +47,22 @@ class NetworkManager{
         }.resume()
     }
     
+    func fetchAlamofireActivity(from url: String, completion: @escaping(Result<Bored, NetworkError>) -> Void) {
+        AF.request("https://www.boredapi.com/api/activity")
+            .validate()
+            .responseJSON { dataResponse in
+                switch dataResponse.result {
+                case .success(let value):
+                    guard let boredData = value as? [String: Any] else { return }
+                    let bored = Bored(boredData: boredData)
+                    print(bored )
+                case .failure(let error):
+                    print(error)
+                }
+            }
+    }
+    
+
+    
 }
 

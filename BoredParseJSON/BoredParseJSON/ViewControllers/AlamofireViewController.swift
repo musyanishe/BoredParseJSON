@@ -26,24 +26,21 @@ class AlamofireViewController: UIViewController {
         participantsAlamofireLabel.isHidden = true
         priceAlamofireLabel.isHidden = true
         accessibilityAlamofireLabel.isHidden = true
+        
+//        activityAlamofireLabel.text =
     }
     
     @IBAction func activityAlamofireBurronPressed(_ sender: UIButton) {
         alamofireActivityButtonPressed()
     }
     
-    private func alamofireActivityButtonPressed() {
-        AF.request("https://www.boredapi.com/api/activity")
-            .validate()
-            .responseJSON { dataResponse in
-                switch dataResponse.result {
-                case .success(let value):
-                    guard let boredData = value as? [[String: Any]] else { return }
-                    print(boredData)
-                case .failure(let error):
-                    print(error)
-                }
-            }
+    func alamofireActivityButtonPressed() {
+//        NetworkManager.shared.fetchAlamofireActivity(from: "https://www.boredapi.com/api/activity") { result in
+//            switch result {
+//            case .success(let boredData):
+//                self.
+//            }
+        }
     }
     
-}
+

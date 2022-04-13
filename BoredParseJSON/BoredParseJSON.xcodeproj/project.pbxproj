@@ -9,9 +9,10 @@
 /* Begin PBXBuildFile section */
 		CE4AAF832805AB9100C427A8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4AAF822805AB9100C427A8 /* Alamofire */; };
 		CE72B89C280613D6006192F8 /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B89B280613D6006192F8 /* AlamofireViewController.swift */; };
+		CE72B89E28064ADF006192F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B89D28064ADF006192F8 /* MainViewController.swift */; };
 		CE95CB412802EFCE0095418A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB402802EFCE0095418A /* AppDelegate.swift */; };
 		CE95CB432802EFCE0095418A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB422802EFCE0095418A /* SceneDelegate.swift */; };
-		CE95CB452802EFCE0095418A /* UrlSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB442802EFCE0095418A /* UrlSessionViewController.swift */; };
+		CE95CB452802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB442802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift */; };
 		CE95CB482802EFCE0095418A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE95CB462802EFCE0095418A /* Main.storyboard */; };
 		CE95CB4A2802EFD00095418A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE95CB492802EFD00095418A /* Assets.xcassets */; };
 		CE95CB592802F2B40095418A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB582802F2B40095418A /* NetworkManager.swift */; };
@@ -21,10 +22,11 @@
 
 /* Begin PBXFileReference section */
 		CE72B89B280613D6006192F8 /* AlamofireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
+		CE72B89D28064ADF006192F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE95CB3D2802EFCE0095418A /* BoredParseJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoredParseJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE95CB402802EFCE0095418A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE95CB422802EFCE0095418A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE95CB442802EFCE0095418A /* UrlSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionViewController.swift; sourceTree = "<group>"; };
+		CE95CB442802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlSessionVSAlamofireViewController.swift; sourceTree = "<group>"; };
 		CE95CB472802EFCE0095418A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE95CB492802EFD00095418A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CE95CB4E2802EFD00095418A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,7 +114,8 @@
 		CE95CB5A2802F2BD0095418A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				CE95CB442802EFCE0095418A /* UrlSessionViewController.swift */,
+				CE72B89D28064ADF006192F8 /* MainViewController.swift */,
+				CE95CB442802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift */,
 				CE72B89B280613D6006192F8 /* AlamofireViewController.swift */,
 			);
 			path = ViewControllers;
@@ -195,9 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE72B89E28064ADF006192F8 /* MainViewController.swift in Sources */,
 				CE95CB592802F2B40095418A /* NetworkManager.swift in Sources */,
 				CE72B89C280613D6006192F8 /* AlamofireViewController.swift in Sources */,
-				CE95CB452802EFCE0095418A /* UrlSessionViewController.swift in Sources */,
+				CE95CB452802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift in Sources */,
 				CE95CB5C2802F2D60095418A /* Bored.swift in Sources */,
 				CE95CB412802EFCE0095418A /* AppDelegate.swift in Sources */,
 				CE95CB432802EFCE0095418A /* SceneDelegate.swift in Sources */,

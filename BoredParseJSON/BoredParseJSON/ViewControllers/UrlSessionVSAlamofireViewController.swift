@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UrlSessionViewController: UIViewController {
+class UrlSessionVSAlamofireViewController: UIViewController {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var activityLabel: UILabel!
@@ -33,7 +33,7 @@ class UrlSessionViewController: UIViewController {
         fetchActivityForButton()
     }
     
-    private func fetchActivityForButton() {
+    func fetchActivityForButton() {
         NetworkManager.shared.fetchActivity(from: "https://www.boredapi.com/api/activity") {
             result in
             switch result {
