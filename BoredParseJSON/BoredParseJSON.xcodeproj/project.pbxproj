@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		CE4AAF832805AB9100C427A8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CE4AAF822805AB9100C427A8 /* Alamofire */; };
-		CE72B89C280613D6006192F8 /* AlamofireViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B89B280613D6006192F8 /* AlamofireViewController.swift */; };
 		CE72B89E28064ADF006192F8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B89D28064ADF006192F8 /* MainViewController.swift */; };
 		CE95CB412802EFCE0095418A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB402802EFCE0095418A /* AppDelegate.swift */; };
 		CE95CB432802EFCE0095418A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95CB422802EFCE0095418A /* SceneDelegate.swift */; };
@@ -21,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE72B89B280613D6006192F8 /* AlamofireViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireViewController.swift; sourceTree = "<group>"; };
 		CE72B89D28064ADF006192F8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		CE95CB3D2802EFCE0095418A /* BoredParseJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoredParseJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE95CB402802EFCE0095418A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,7 +114,6 @@
 			children = (
 				CE72B89D28064ADF006192F8 /* MainViewController.swift */,
 				CE95CB442802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift */,
-				CE72B89B280613D6006192F8 /* AlamofireViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -200,7 +197,6 @@
 			files = (
 				CE72B89E28064ADF006192F8 /* MainViewController.swift in Sources */,
 				CE95CB592802F2B40095418A /* NetworkManager.swift in Sources */,
-				CE72B89C280613D6006192F8 /* AlamofireViewController.swift in Sources */,
 				CE95CB452802EFCE0095418A /* UrlSessionVSAlamofireViewController.swift in Sources */,
 				CE95CB5C2802F2D60095418A /* Bored.swift in Sources */,
 				CE95CB412802EFCE0095418A /* AppDelegate.swift in Sources */,

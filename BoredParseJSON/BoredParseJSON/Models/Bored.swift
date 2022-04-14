@@ -8,18 +8,23 @@
 import Foundation
 
 struct Bored: Decodable {
-    let activity: String?
-    let type: String?
-    let participants: Int?
-    let price: Double?
-    let accessibility: Double?
+    let activity: String
+    let type: String
+    let participants: Int
+    let price: Double
+    let accessibility: Double
     
-    init(boredData: [String: Any]) {
-    activity = boredData["activity"] as? String
-    type = boredData["type"] as? String
-    participants = boredData["participants"] as? Int
-    price = boredData["price"] as? Double
-    accessibility = boredData["accessibility"] as? Double
+    init(value: [String: Any]) {
+        activity = value["activity"] as? String ?? ""
+        type = value["type"] as? String ?? ""
+        participants = value["participants"] as? Int ?? 0
+        price = value["price"] as? Double ?? 0
+        accessibility = value["accessibility"] as? Double ?? 0
+    }
+    
+    static func getBored(from value: Any) -> Bored? {
+        guard let value = value as? Bored else { return nil }
+        return value
     }
     
 }
