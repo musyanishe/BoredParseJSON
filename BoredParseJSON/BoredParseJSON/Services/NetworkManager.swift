@@ -33,7 +33,7 @@ class NetworkManager{
                 return
             }
             guard let httpResponse = response as? HTTPURLResponse,
-            (200..<300).contains(httpResponse.statusCode) else {
+                  (200..<300).contains(httpResponse.statusCode) else {
                 completion(.failure(.invalidStatusCode))
                 return
             }
@@ -54,15 +54,31 @@ class NetworkManager{
                 switch dataResponse.result {
                 case .success(let value):
                     guard let boredData = value as? [String: Any] else { return }
-                    let bored = Bored(boredData: boredData)
-                    print(bored )
+                    let bored = Bored(value: boredData)
+                    print(bored)
+                    completion(.success(bored))
                 case .failure(let error):
                     print(error)
+                    completion(.failure(.decodingError))
                 }
             }
     }
     
-
+    func fetchActivityWitkAutoParsing(from url: String, completion: @escaping(Result<Bored, NetworkError>) -> Void) {
+        AF.request("https://www.boredapi.com/api/activity")
+            .validate()
+            .responseDecodable(of: Bored.self) { dataResponse in
+                switch dataResponse.result {
+                case .success(let Bored):
+                    let bored = Bored
+                    completion(.success(bored))
+                case .failure(let error):
+                    print(error)
+                    completion(.failure(.decodingError))
+                }
+                
+            }
+    }
     
 }
 

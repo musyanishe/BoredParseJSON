@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UrlSessionVSAlamofireViewController: UIViewController {
+class UrlSessionViewController: UIViewController {
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
     @IBOutlet var activityLabel: UILabel!
@@ -15,6 +15,8 @@ class UrlSessionVSAlamofireViewController: UIViewController {
     @IBOutlet var participantsLabel: UILabel!
     @IBOutlet var priceLabel: UILabel!
     @IBOutlet var accessibilitiesLabel: UILabel!
+    
+    var bored: Bored!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,11 +41,11 @@ class UrlSessionVSAlamofireViewController: UIViewController {
             switch result {
             case .success(let bored):
                 DispatchQueue.main.async {
-                    self.activityLabel.text = "Activity: \(bored.activity ?? "")"
-                    self.typeLabel.text = "Type: \(bored.type ?? "")"
-                    self.participantsLabel.text = "Participants: \(bored.participants ?? 0)"
-                    self.priceLabel.text = "Price: \(bored.price ?? 0)"
-                    self.accessibilitiesLabel.text = "Accessibility: \(bored.accessibility ?? 0)"
+                    self.activityLabel.text = "Activity: \(bored.activity)"
+                    self.typeLabel.text = "Type: \(bored.type)"
+                    self.participantsLabel.text = "Participants: \(bored.participants)"
+                    self.priceLabel.text = "Price: \(bored.price)"
+                    self.accessibilitiesLabel.text = "Accessibility: \(bored.accessibility)"
                     self.activityIndicator.stopAnimating()
                     self.activityLabel.isHidden = false
                     self.typeLabel.isHidden = false
@@ -56,5 +58,8 @@ class UrlSessionVSAlamofireViewController: UIViewController {
             }
         }
     }
+    
+
+    
 }
 

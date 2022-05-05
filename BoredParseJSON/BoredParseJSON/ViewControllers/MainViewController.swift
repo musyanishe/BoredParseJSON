@@ -10,17 +10,17 @@ import UIKit
 
 enum UserActions: String {
     case urlSessionGet = "URL Session"
-    case alamofireGet = "Alamofire"
+    case alamofireGet = "Manual Parsing"
+    case alamAutoGet = "Just Alamofire"
 }
 
 class MainViewController: UIViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            guard let urlSessionVSAlamofireVC = segue.destination as? UrlSessionVSAlamofireViewController else {return}
-            switch segue.identifier {
-            case "urlSession": urlSessionVSAlamofireVC.fetchActivityForButton()
-            case "alamofireGet": urlSessionVSAlamofireVC.alamofireActivityButtonPressed()
-            default: break
-            }
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//            switch segue.identifier {
+//            case "URLSession":
+//            case "ManualParsing":
+//            case "Alamofire":
+//            }
+//        }
 
 }
